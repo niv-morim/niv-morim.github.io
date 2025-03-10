@@ -6,55 +6,102 @@
     <title>משרד עורכות דין</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             direction: rtl;
             text-align: center;
-            background-color: #f5f5f5;
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
         }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             padding: 20px;
             background: white;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
             border-radius: 10px;
-            margin-top: 50px;
+            margin-top: 30px;
         }
         h1 {
             color: #2c3e50;
+            font-size: 28px;
         }
         p {
             color: #555;
+            font-size: 18px;
         }
         .contact-form {
             margin-top: 20px;
         }
         input, textarea {
             width: 100%;
-            padding: 10px;
-            margin: 5px 0;
+            padding: 12px;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 16px;
         }
         button {
             background-color: #2980b9;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 18px;
         }
         button:hover {
             background-color: #1c5985;
         }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .service-box {
+            width: 30%;
+            padding: 15px;
+            background: #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
+    <div class="header">משרד עורכות דין - מומחיות במשפט אזרחי ומסחרי</div>
     <div class="container">
-        <h1>ברוכים הבאים למשרד עורכות הדין</h1>
-        <p>אנו מתמחות במשפט אזרחי, מסחרי ונדל"ן. צרו איתנו קשר לקבלת ייעוץ מקצועי.</p>
+        <h1>ברוכים הבאים</h1>
+        <p>אנו מספקות שירותים משפטיים מקצועיים בתחומי המשפט האזרחי, המסחרי והנדל"ן. נשמח לעמוד לשירותכם.</p>
+        
+        <h2>תחומי התמחות</h2>
+        <div class="services">
+            <div class="service-box">
+                <h3>משפט אזרחי</h3>
+                <p>ייעוץ וייצוג בתביעות אזרחיות.</p>
+            </div>
+            <div class="service-box">
+                <h3>משפט מסחרי</h3>
+                <p>ייעוץ לעסקים, חוזים וסכסוכים.</p>
+            </div>
+            <div class="service-box">
+                <h3>נדל"ן</h3>
+                <p>ליווי משפטי בעסקאות נדל"ן.</p>
+            </div>
+        </div>
         
         <h2>צור קשר</h2>
         <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
@@ -64,5 +111,8 @@
             <button type="submit">שלח</button>
         </form>
     </div>
+    <footer>
+        <p>© 2025 כל הזכויות שמורות | משרד עורכות דין</p>
+    </footer>
 </body>
 </html>
