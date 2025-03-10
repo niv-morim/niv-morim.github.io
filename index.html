@@ -80,6 +80,31 @@
             font-size: 14px;
         }
     </style>
+    <script>
+        function sendToGoogleForm(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            
+            var formUrl = "YOUR_GOOGLE_FORM_URL_HERE";
+            
+            var formData = new FormData();
+            formData.append("entry.123456789", name); // עדכני את ה-ID המתאים לכל שדה
+            formData.append("entry.987654321", email);
+            formData.append("entry.567890123", message);
+            
+            fetch(formUrl, {
+                method: "POST",
+                body: formData,
+                mode: "no-cors"
+            }).then(() => {
+                alert("ההודעה נשלחה בהצלחה!");
+                document.getElementById('contact-form').reset();
+            }).catch(error => console.error("Error:", error));
+        }
+    </script>
 </head>
 <body>
     <div class="header">משרד עורכות דין - מומחיות במשפט אזרחי ומסחרי</div>
@@ -104,10 +129,10 @@
         </div>
         
         <h2>צור קשר</h2>
-        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <input type="text" name="name" placeholder="שם מלא" required>
-            <input type="email" name="email" placeholder="אימייל" required>
-            <textarea name="message" placeholder="ההודעה שלך" required></textarea>
+        <form id="contact-form" class="contact-form" onsubmit="sendToGoogleForm(event);">
+            <input type="text" id="name" placeholder="שם מלא" required>
+            <input type="email" id="email" placeholder="אימייל" required>
+            <textarea id="message" placeholder="ההודעה שלך" required></textarea>
             <button type="submit">שלח</button>
         </form>
     </div>
